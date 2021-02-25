@@ -1,5 +1,6 @@
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
+const images = document.querySelector('.photo');
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
@@ -13,7 +14,7 @@ let availableQuestions = [];
 
 let questions = [{
         question: 'What is 2 + 2?',
-
+        image: 'img/assassins.png',
         choice1: '2',
         choice2: '4',
         choice3: '21',
@@ -22,6 +23,7 @@ let questions = [{
     },
     {
         question: 'What is New-York?',
+        image: 'img/spiderman.png',
         choice1: 'Big City',
         choice2: 'The capital',
         choice3: 'Game',
@@ -30,6 +32,7 @@ let questions = [{
     },
     {
         question: 'What is 2 + 2?',
+        image: 'img/controller.png',
         choice1: '2',
         choice2: '4',
         choice3: '21',
@@ -38,6 +41,7 @@ let questions = [{
     },
     {
         question: 'What is 2 + 2?',
+        image: 'img/sackboy.png',
         choice1: '2',
         choice2: '4',
         choice3: '21',
@@ -70,10 +74,11 @@ getNewQuestion = () => {
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
+    images.src = `${currentQuestion.image}`;
 
     choices.forEach(choice => {
         const number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice' + number]
+        choice.innerText = currentQuestion['choice' + number];
     });
 
     availableQuestions.splice(questionIndex, 1);

@@ -1,76 +1,123 @@
 body {
-	color: #fff;
+    color: #fff;
+     margin: 0;
+    padding: 0;
+}
+
+
+.answers {
+	z-index: 2;
 }
 
 .choice-container {
-	display: flex;
-	margin-bottom: 0.8rem;
-	width: 100%;
-	border-radius: 4px;
-	background: rgb(18, 93, 255);
-	font-size: 1rem;
-	min-width: 50rem;
+    display: flex;
+    margin-bottom: 0.8rem;
+    width: 80%;
+    border-radius: 4px;
+    background: rgb(18, 93, 255);
+    font-size: 1rem;
+    min-width: 50rem;
 }
 
 .choice-container:hover {
-	cursor: pointer;
-	box-shadow: 0 0.4rem 1.4rem 0 rgba(6,103,247,0.5);
-	transform: scale(1.02);
-	transform: transform 100ms;
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(6, 103, 247, 0.5);
+    transform: scale(1.02);
+    transform: transform 100ms;
 }
 
 .choice-prefix {
-	padding: 1rem 1.5rem;
-	color: #fff;
+    padding: 1rem 1.5rem;
+    color: #fff;
 }
 
 .choice-text {
-	padding: 1rem;
-	width: 100%;
+    padding: 1rem;
+    width: 100%;
 }
 
 .correct {
-	background: linear-gradient(32deg, rgba(11,223,36) 0%, rgb(41,232,111) 100%);
+    background: linear-gradient(32deg, rgba(11, 223, 36) 0%, rgb(41, 232, 111) 100%);
 }
 
 .incorrect {
-	background: linear-gradient(32deg, rgba(230,29,29,1) 0%, rgba(224,11,11,1) 100%);
+    background: linear-gradient(32deg, rgba(230, 29, 29, 1) 0%, rgba(224, 11, 11, 1) 100%);
 }
 
 /*Heads and Display*/
 
+#game {
+	width: 70%;
+}
+
 #hud {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .hud-prefix {
-	text-align: center;
-	font-size: 2rem;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .hud-main-text {
-	text-align: center;
+    text-align: center;
 }
 
 #progressBar {
-	width: 20rem;
-	height: 3rem;
-	border: .2rem solid rgb(11,223,36);
-	margin-top: 2rem;
-	border-radius: 50px;
-	overflow: hidden;
+    width: 20rem;
+    height: 3rem;
+    border: .25rem solid rgb(43, 42, 116);
+    margin-top: 2rem;
+    border-radius: 50px;
+    overflow: hidden;
 }
 
 #progressBarFull {
-	height: 100%;
-	background: rgb(11,223,36);
-	width: 0%;
+    height: 101%;
+    background: rgb(43, 42, 116);
+    width: 0%;
+}
+
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+
+.circle1,
+.circle2 {
+    background: #fff;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, .8), rgba(255, 255, 255, .3));
+    height: 15rem;
+    width: 15rem;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle1 {
+    top: 8%;
+    right: 15%;
+}
+
+.circle2 {
+    bottom: 10%;
+    left: 15%;
 }
 
 @media screen and (max-width: 768px) {
-	.choice-container {
-		min-width: 30rem;
-	}
+    .choice-container {
+        min-width: 20rem;
+    }
+
+    .container {
+    	padding: 0rem;
+    	margin-top: 2rem;
+    }
+
+    #hud {
+    	flex-direction: column;
+    }
 }
